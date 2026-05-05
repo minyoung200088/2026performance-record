@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20260506 퍼포먼스 기록</title>
+    <!-- 구글 폰트 설정 (본문용 및 제목용) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 기본 스타일 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Serif KR', serif;
+            background-color: #fcfcfc;
+            color: #333;
+            line-height: 1.8;
+            word-break: keep-all;
+        }
+
+        /* 헤더 영역 */
+        header {
+            padding: 80px 20px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            border-bottom: 1px solid #eee;
+        }
+
+        .title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #111;
+        }
+
+        .meta-info {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .meta-info div {
+            margin-bottom: 5px;
+        }
+
+        /* 본문 설명 영역 */
+        .description {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        /* 기록 그리드 영역 */
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .record-card {
+            background: #fff;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .image-box {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background-color: #eee; /* 이미지 없을 때 회색 박스 */
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .record-text {
+            font-size: 0.9rem;
+            color: #555;
+            padding: 10px 0;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* 푸터 */
+        footer {
+            text-align: center;
+            padding: 100px 0 50px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        /* 반응형 설정 */
+        @media (max-width: 600px) {
+            .title { font-size: 1.4rem; }
+            .archive-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="title">
+            20260506 퍼포먼스 <br>
+            &lt;영원히 잊을 수 없을 저녁을 떠올려야 하는 괴로움을 이해하기 위하여&gt; 기록
+        </div>
+        <div class="meta-info">
+            <div><strong>기록자</strong> 장민영</div>
+            <div><strong>기록 보조자</strong> 김도해</div>
+            <div><strong>퍼포머</strong> 안건우</div>
+        </div>
+    </header>
+
+    <section class="description">
+        <p>
+            본 퍼포먼스는 2026년 5월 6일 수요일 12시부터 약 480분 동안 수행되었다. <br>
+            퍼포머 안건우는 다음과 같은 행동과 표정을 보였다.
+        </p>
+        <p style="color: #888;">
+            &lt;이곳에 퍼포먼스 전반에 대한 추가적인 설명을 적어주세요.&gt;
+        </p>
+    </section>
+
+    <main class="archive-grid">
+        <!-- 기록 아이템 1 -->
+        <div class="record-card">
+            <div class="image-box">
+                <!-- 이미지 경로를 넣어주세요 -->
+                <img src="https://via.placeholder.com/800x600" alt="퍼포먼스 장면 1">
+            </div>
+            <div class="record-text">
+                [14:20] 퍼포머는 창밖을 약 10분간 응시하며 손가락을 가볍게 떨었다.
+            </div>
+        </div>
+
+        <!-- 기록 아이템 2 -->
+        <div class="record-card">
+            <div class="image-box">
+                <img src="https://via.placeholder.com/800x600" alt="퍼포먼스 장면 2">
+            </div>
+            <div class="record-text">
+                [15:45] 바닥에 놓인 오브제를 천천히 들어 올리는 과정.
+            </div>
+        </div>
+
+        <!-- 기록 아이템 3 -->
+        <div class="record-card">
+            <div class="image-box">
+                <img src="https://via.placeholder.com/800x600" alt="퍼포먼스 장면 3">
+            </div>
+            <div class="record-text">
+                [17:10] 조명이 어두워지자 퍼포머의 호흡이 거칠어지기 시작함.
+            </div>
+        </div>
+
+        <!-- 아이템 추가는 위 record-card 단위를 복사해서 사용하세요 -->
+    </main>
+
+    <footer>
+        &copy; 2026. 20260506 Performance Archive. All rights reserved.
+    </footer>
+
+</body>
+</html>
