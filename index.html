@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>20260506 퍼포먼스 기록</title>
-    <!-- 구글 폰트 설정 (본문용 및 제목용) -->
+    <!-- 구글 폰트 설정 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* 기본 스타일 */
+        /* [기존 스타일 유지] */
         body {
             margin: 0;
             padding: 0;
@@ -18,7 +18,6 @@
             word-break: keep-all;
         }
 
-        /* 헤더 영역 */
         header {
             padding: 80px 20px 10px;
             max-width: 900px;
@@ -43,10 +42,9 @@
             margin-bottom: 5px;
         }
 
-        /* 포스터 이미지 영역 (가득 차게) */
         .poster-section {
             width: 100%;
-            max-width: 1200px; /* 전체 페이지 최대 너비와 맞춤 */
+            max-width: 1200px;
             margin: 0 auto 60px;
             padding: 0 20px;
             box-sizing: border-box;
@@ -58,11 +56,9 @@
             height: auto;
             display: block;
             margin: 0 auto;
-            /* 은은한 그림자를 넣어 포스터를 강조 */
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
 
-        /* 본문 설명 영역 */
         .description {
             max-width: 900px;
             margin: 10px auto;
@@ -73,50 +69,72 @@
             padding-top: 40px;
         }
 
-        .description-sub {
-            color: #888;
-            font-size: 0.95rem;
-            margin-top: 20px;
-        }
-
-        /* 기록 그리드 영역 */
-        .archive-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
+        /* [타임라인 스타일 시작] */
+        .timeline-section {
+            max-width: 800px;
             margin: 60px auto;
             padding: 0 20px;
+            position: relative;
         }
 
-        .record-card {
+        /* 중앙 세로선 */
+        .timeline-section::before {
+            content: '';
+            position: absolute;
+            left: 31px; /* 원의 중심과 맞춤 */
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: #ddd;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 80px; /* 아이템 간 간격 */
+            padding-left: 60px;
+        }
+
+        /* 타임라인 표시 점 */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 2px solid #333;
+            z-index: 1;
+        }
+
+        .timeline-content {
             background: #fff;
-            overflow: hidden;
+            padding: 0;
         }
 
-        .image-box {
+        .timeline-image-box {
             width: 100%;
-            aspect-ratio: 4 / 3;
-            background-color: #eee;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             overflow: hidden;
+            border: 1px solid #f0f0f0;
         }
 
-        .image-box img {
+        .timeline-image-box img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             display: block;
         }
 
-        .record-text {
-            font-size: 0.9rem;
-            color: #555;
-            padding: 10px 0;
-            border-top: 1px solid #f0f0f0;
+        .timeline-text {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.7;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
         }
 
-        /* 푸터 */
+        /* [푸터 스타일 유지] */
         footer {
             text-align: center;
             padding: 100px 0 50px;
@@ -125,11 +143,10 @@
             border-top: 1px solid #eee;
         }
 
-        /* 반응형 설정 */
         @media (max-width: 600px) {
             .title { font-size: 1.4rem; }
-            .archive-grid { grid-template-columns: 1fr; }
             header { padding: 40px 20px; }
+            .timeline-section { margin-top: 40px; }
         }
     </style>
 </head>
@@ -140,56 +157,69 @@
             20260506 퍼포먼스 아카이브 <br>
             영원히 잊을 수 없을 저녁을 떠올려야 하는 괴로움을 이해하기 위하여
         </div>
-            <!-- 포스터 영역: 여기에 포스터 이미지 파일명을 넣으세요 -->
-    <section class="poster-section">
-        <img src="KakaoTalk_20260505_161416247.jpg" alt="퍼포먼스 포스터">
-    </section>
         
+        <section class="poster-section">
+            <img src="KakaoTalk_20260505_161416247.jpg" alt="퍼포먼스 포스터">
+        </section>
+            
         <div class="meta-info">
             <div><strong>기록자</strong> 장민영</div>
             <div><strong>기록 보조자</strong> 김도해</div>
             <div><strong>퍼포머</strong> 안건우</div>
         </div>
     </header>
+
     <section class="description">
         <p>
             본 퍼포먼스는 2026년 5월 6일 수요일 12시부터 약 480분 동안 수행되었다. <br>
-            퍼포머는 서울대학교 공연예술학과 석사과정생 안건우 군이다. <br>
+            퍼포머는 서울대학교 공연예술학과 석사과정생 안건우 군으로 지극히 개인적인 수기에 가까운 작업이라고 할 수 있다. <br>
             2014년 04월 16일 직후부터 그가 수집했던 여러 언론기관들의 신문을 낭독하는 형태로 퍼포먼스가 진행되었다. <br>
-            거대한 모노리스 뒷편에서 신문을 읽어나가는 모습은 카메라를 통해 그대로 투사된다. 
+            기록자는 그의 은밀한 사적 기억을 소재로 하는 본 프로젝트가 개인이라는 경계에서 끝나지 않고 인문소극장이라는 공간을 매개로 하여 공적 영역의 침범과 간섭을 허락하는 과정을 기록하고자 본 페이지를 개설하였다. <br>
+            억지로 끄집어내어 그것에 대해 평하는 자리가 아닌, 공과 사의 경계에 서서 그의 작업에 대한 기록자의 개인적인, 또다른 사적 기억을 만드는 것이다.
          </p>
     </section>
     
-    <main class="archive-grid">
-        <!-- 기록 아이템 1 -->
-        <div class="record-card">
-            <div class="image-box">
-                <img src="KakaoTalk_20260505_161416247_01.jpg" alt="퍼포먼스 장소 1">
-            </div>
-            <div class="record-text">
-                [14:20] 퍼포머는 약 10분간 신문을 응시하며 손가락을 가볍게 떨었다.
-            </div>
-        </div>
-
-        <!-- 기록 아이템 2 -->
-        <div class="record-card">
-            <div class="image-box">
-                <img src="photo2.jpg" alt="퍼포먼스 장면 2">
-            </div>
-            <div class="record-text">
-                [15:45] 심호흡 후 신문을 천천히 들어 올리는 과정.
+    <!-- 타임라인 영역 -->
+    <main class="timeline-section">
+        
+        <!-- 기록 1 -->
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <div class="timeline-image-box">
+                    <img src="KakaoTalk_20260505_161416247_01.jpg" alt="퍼포먼스 기록 1">
+                </div>
+                <div class="timeline-text">
+                    <strong>[11:50]</strong> 거대한 모노리스 뒷편에서 신문을 읽어나가는 모습은 카메라를 통해 그대로 투사된다. <br>
+                    퍼포머는 약 10분간 신문을 응시하며 손가락을 가볍게 떨었다. <br>
+                    호흡을 고르며 정각까지의 시간을 상념에 잠긴 표정으로 보냈다.
+                </div>
             </div>
         </div>
 
-        <!-- 기록 아이템 3 -->
-        <div class="record-card">
-            <div class="image-box">
-                <img src="photo3.jpg" alt="퍼포먼스 장면 3">
-            </div>
-            <div class="record-text">
-                [17:10] 세월호 참사 사건에 직접적인 기사를 읽기 시작하자 퍼포머의 호흡이 거칠어지기 시작함.
+        <!-- 기록 2 -->
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <div class="timeline-image-box">
+                    <img src="photo2.jpg" alt="퍼포먼스 기록 2">
+                </div>
+                <div class="timeline-text">
+                    <strong>[12:30]</strong> 심호흡 후 신문을 천천히 들어 올리는 과정.
+                </div>
             </div>
         </div>
+
+        <!-- 기록 3 -->
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <div class="timeline-image-box">
+                    <img src="photo3.jpg" alt="퍼포먼스 기록 3">
+                </div>
+                <div class="timeline-text">
+                    <strong>[17:10]</strong> 세월호 참사 사건에 직접적인 기사를 읽기 시작하자 퍼포머의 호흡이 거칠어지기 시작함.
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer>
