@@ -72,11 +72,12 @@
         /* [타임라인 스타일] */
         .timeline-section {
             max-width: 800px;
-            margin: 60px auto;
+            margin: 80px auto;
             padding: 0 20px;
             position: relative;
         }
 
+        /* 수직 선 */
         .timeline-section::before {
             content: '';
             position: absolute;
@@ -85,40 +86,44 @@
             bottom: 0;
             width: 1px;
             background-color: #ddd;
+            z-index: 0; /* 선을 뒤로 보냄 */
         }
 
         .timeline-item {
             position: relative;
-            margin-bottom: 80px;
+            margin-bottom: 120px; /* 여백을 넓혀서 가독성 높임 */
             padding-left: 60px;
         }
 
+        /* 타임라인 점 */
         .timeline-item::after {
             content: '';
             position: absolute;
             left: 25px;
-            top: 5px;
+            top: 8px;
             width: 12px;
             height: 12px;
             border-radius: 50%;
             background-color: #fff;
             border: 2px solid #333;
-            z-index: 1;
+            z-index: 2; /* 점을 가장 앞으로 */
         }
 
         .timeline-content {
-            background: #fff;
+            background: transparent;
+            position: relative;
+            z-index: 1;
         }
 
         .timeline-image-box {
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             overflow: hidden;
             border: 1px solid #f0f0f0;
-            background-color: #000; /* 영상 로딩 전 배경 */
+            background-color: #f0f0f0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
-        /* 이미지와 비디오가 박스에 꽉 차도록 설정 */
         .timeline-image-box img,
         .timeline-image-box video {
             width: 100%;
@@ -129,9 +134,32 @@
         .timeline-text {
             font-size: 1rem;
             color: #444;
-            line-height: 1.7;
-            padding-bottom: 10px;
+            line-height: 1.8;
+            padding-bottom: 15px;
             border-bottom: 1px solid #eee;
+        }
+
+        /* [기록자의 소감 섹션] */
+        .reflection-section {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .reflection-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #222;
+            text-align: center;
+        }
+
+        .reflection-text {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.9;
         }
 
         /* [푸터 스타일] */
@@ -139,7 +167,7 @@
             text-align: center;
             padding: 80px 20px 60px;
             border-top: 1px solid #eee;
-            background-color: #f9f9f9;
+            background-color: #fff;
         }
 
         .footer-copyright {
@@ -162,7 +190,8 @@
         @media (max-width: 600px) {
             .title { font-size: 1.4rem; }
             header { padding: 40px 20px; }
-            .timeline-section { margin-top: 40px; }
+            .timeline-section { margin-top: 40px; margin-bottom: 40px; }
+            .timeline-item { margin-bottom: 80px; }
         }
     </style>
 </head>
@@ -190,9 +219,7 @@
             본 퍼포먼스는 2026년 5월 6일 수요일 12시부터 약 480분 동안 수행되었다. <br>
             퍼포머는 서울대학교 공연예술학과 석사과정생 안건우 군이다. <br>
             2014년 04월 16일 직후부터 그가 수집했던 여러 언론기관들의 신문을 낭독하는 형태로 퍼포먼스가 진행되었다. <br>
-            기록자는 그의 은밀한 사적 기억을 소재로 하는 본 프로젝트가 개인이라는 경계에서 끝나지 않고 인문소극장이라는 공간을 매개로 하여 공적 영역의 침범과 간섭을 허락하는 과정을 기록하고자 본 페이지를 개설하였다. <br>
-            억지로 끄집어내어 그것에 대해 평하는 자리가 아닌, 공과 사의 경계에 서서 그의 작업에 대한 기록자의 개인적인, 또다른 사적 기억을 만드는 것이다. <br>
-            매년 4월 16일이 되면 SNS에는 많은 애도들이 포스팅 된다. 그렇다면 4월 16일이 지난 어느 불특정한 날의 우리는 어떠한 기억 층위에서 삶을 영위할까?
+            기록자는 그의 은밀한 사적 기억을 소재로 하는 본 프로젝트가 개인이라는 경계에서 끝나지 않고 인문소극장이라는 공간을 매개로 하여 공적 영역의 침범과 간섭을 허락하는 과정을 기록하고자 본 페이지를 개설하였다.
          </p>
     </section>
     
@@ -209,20 +236,18 @@
             </div>
         </div>
 
-        <!-- 기록 2 -->
+        <!-- 기록 2 (구조 복구 완료) -->
         <div class="timeline-item">
             <div class="timeline-content">
-                </div>
                 <div class="timeline-text">
                     <strong>[13:00]</strong> 두 명의 남학생들, 대학신문의 기자를 포함한 관객들이 오고갔다. 퍼포머는 이때를 생각보다 신문의 텍스트가 많았다고 회상하며, 감정이 올라와 눈물을 보였다. 
                 </div>
             </div>
         </div>
 
-        <!-- 기록 3 -->
+        <!-- 기록 3 (구조 복구 완료) -->
         <div class="timeline-item">
             <div class="timeline-content">
-                </div>
                 <div class="timeline-text">
                     <strong>[15:00]</strong> 휴식을 끝낸 퍼포머는 극장으로 다시 돌아왔다. 쉬지 않고 텍스트를 읽으며 어둠과 스피커에서 나오는 소리에 머리가 아프다고 두통을 호소했다. <br>
                     극장으로 돌아온 그의 손에는 바둑알과 바둑판이 들려있었다.
@@ -237,8 +262,7 @@
                     <img src="ba_1.jpg" alt="퍼포먼스 기록 4">
                 </div>
                 <div class="timeline-text">
-                    <strong>[15:30]</strong> 퍼포머는 공간을 이동하여 음향감독과 함께 무대 소대로 들어가 바둑을 두기 시작했다. 바둑돌이 울리는 소리가 극장을 채웠다. <br>
-                    불규칙적이고 소리의 울림이 저마다 다른 바둑돌의 소리는 검은 공간을 가득 채웠다.
+                    <strong>[15:30]</strong> 퍼포머는 공간을 이동하여 음향감독과 함께 무대 소대로 들어가 바둑을 두기 시작했다. 바둑돌이 울리는 소리가 극장을 채웠다. 
                 </div>
             </div>
         </div>
@@ -246,18 +270,16 @@
         <!-- 기록 5 -->
         <div class="timeline-item">
             <div class="timeline-content">
-                </div>
                 <div class="timeline-text">
                     <strong>[16:00]</strong> 바둑을 두던 퍼포머는 극장을 빠져나와 30분간 휴식을 청했다. 
                 </div>
             </div>
         </div>
         
-        <!-- 기록 6: 직접 업로드한 동영상 방식 -->
+        <!-- 기록 6: 동영상 -->
         <div class="timeline-item">
             <div class="timeline-content">
                 <div class="timeline-image-box">
-                    <!-- 'video1.mp4' 자리에 실제 업로드한 파일명을 넣으세요 -->
                     <video controls playsinline>
                         <source src="p_1.mp4" type="video/mp4">
                         브라우저가 동영상을 지원하지 않습니다.
@@ -269,11 +291,10 @@
             </div>
         </div>
 
-        <!-- 기록 7>
+        <!-- 기록 7: 동영상 (구조 복구 완료) -->
         <div class="timeline-item">
             <div class="timeline-content">
                 <div class="timeline-image-box">
-                    <!-- 'video2.mp4' 자리에 실제 업로드한 파일명을 넣으세요 -->
                     <video controls playsinline>
                         <source src="p_s_1.mp4" type="video/mp4">
                         브라우저가 동영상을 지원하지 않습니다.
@@ -285,7 +306,8 @@
                 </div>
             </div>
         </div>
- <!-- 기록 8-->
+
+        <!-- 기록 8 -->
         <div class="timeline-item">
             <div class="timeline-content">
                 <div class="timeline-image-box">
@@ -297,6 +319,21 @@
             </div>
         </div>
     </main>
+
+    <!-- [새로 추가된 섹션: 기록자의 소감] -->
+    <section class="reflection-section">
+        <div class="reflection-title">기록을 마치며</div>
+        <div class="reflection-text">
+            <p>
+                8시간이라는 긴 시간 동안 진행된 이 퍼포먼스를 지켜보며, 기록자는 '기억한다는 것'의 무게에 대해 다시금 생각하게 되었습니다. 
+                단순히 과거의 사건을 나열하는 것이 아니라, 그 기억이 현재의 공간에서 어떻게 소리와 몸짓으로 치환되는지 목격하는 과정이었습니다.
+            </p>
+            <p>
+                공과 사의 경계에서 흔들리던 퍼포머의 눈빛과 극장을 채우던 바둑알의 타격음은, 이제 이 아카이브를 통해 또 다른 공적 기억으로 남게 될 것입니다. 
+                이 기록이 누군가에게는 잊고 있었던 어느 불특정한 날의 감각을 깨우는 매개체가 되기를 바랍니다.
+            </p>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-copyright">
